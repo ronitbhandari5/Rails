@@ -1,22 +1,7 @@
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  
-  <p>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
+<%= simple_form_for [@article, @article.comments.build] do |form| %>
+  <%= form.input :commenter %>
+  <%= form.input :body, as: :text %>
+  <%= form.input :status, collection: ['public', 'private', 'archived'], include_blank: false %>
+  <%= form.button :submit, class: "btn-custom" %>
 <% end %>
-
 

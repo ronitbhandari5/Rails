@@ -1,0 +1,9 @@
+.btn-custom {
+    background-color: #150630;
+    color: rgb(253, 252, 250);
+    padding: 4px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
